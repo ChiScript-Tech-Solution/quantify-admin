@@ -1,0 +1,300 @@
+
+.invite__admin__wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background: var(--app-theme);
+    padding: 20px;
+    gap: 20px;
+}
+
+.invite__admin__wrapper .left__wrapper {
+    width: 20rem;
+}
+
+.invite__admin__wrapper .left__wrapper .title {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.invite__admin__wrapper .left__wrapper .desc {
+    font-size: 14px;
+    padding-top: 20px;
+}
+
+.invite__admin__wrapper .left__wrapper button {
+    margin-top: 1rem;
+    width: 100%;
+    font-weight: 700;
+}
+
+.invite__admin__wrapper .right__wrapper {
+    width: 100%;
+    border: 1px solid var(--app-dashboard);
+}
+
+.invite__auth__input p {
+    color: var(--app-neutral);
+    padding-bottom: 5px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.invite__btn {
+    width: 100%;
+    margin-top: 3rem;
+    font-weight: 700;
+}
+
+
+
+/* PROFILE TAB */
+.profile__tap__wrapper {
+    width: 100%;
+    background: var(--app-theme);
+    padding: 40px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.merchant__overview__header__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.merchant__overview__header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.merchant__overview__header img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid var(--app-tertiary);
+    transition: transform 0.3s;
+}
+
+.merchant__overview__header img:hover {
+    transform: scale(1.3);
+}
+
+.merchant__overview__header p {
+    color: var(--app-primary);
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 30px;
+    text-transform: capitalize;
+}
+
+
+.merchant__overview__header span {
+    color: var(--app-label);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.border__inner {
+    border: 1px solid  rgba(237, 239, 245, 1);
+    padding: 15px;
+    border-radius: 8px;
+ }
+
+ .info__text {
+    font-weight: 600;
+    color: var(--app-primary);
+    font-size: 18px;
+}
+
+.btn__icon__gap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+}
+
+
+.profile__wrapper__content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: left;
+    padding-bottom: 32px;
+}
+
+
+.profile__wrapper__content section:nth-child(1) {
+    width: 400px;
+}
+
+.profile__wrapper__content span {
+    color: var(--app-desc);
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.profile__wrapper__content p {
+    color: var(--app-secondary);
+    font-size: 18px;
+    font-weight: 500;
+}
+
+
+
+.new__auth__wrapper span {
+    color: rgba(114, 116, 125, 1);
+    font-size: 13px;
+    font-weight: 400;
+    padding-bottom: 6.06px;
+  }
+
+
+  .new__auth__wrapper input,
+.new__auth__wrapper textarea,
+.new__auth__wrapper select {
+  width: 100%;
+  height: 40px;
+  padding: 8px 9px;
+  background: rgba(237, 239, 245, 1);
+  border-radius: 6px;
+  border: none;
+  margin-top: 6.06px;
+  text-transform: capitalize;
+}
+
+
+.new__auth__wrapper input:focus,
+.new__auth__wrapper textarea:focus,
+.new__auth__wrapper select:focus,
+.pictcher__input:focus, .pictcher__input:hover,
+.pictcher__input input:focus, .pictcher__input input:hover {
+  border: none !important;
+  outline: none !important;
+  border-color: none !important;
+  box-shadow: none !important;
+}
+
+.help__form {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 1rem;
+    gap: 20px;
+}
+
+
+.help__form form {
+    background: var(--app-theme);
+    width: 100%;
+    height: 350px;
+    border: 1px solid var(--app-bg);
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.help__form form p {
+    color: var(--app-secondary);
+    font-weight: 600;
+    font-size: 16px;
+    padding-bottom: 24px;
+}
+
+.help__form form textarea {
+    height: 94px;
+    margin-bottom: 24px;
+}
+
+.help__form form button {
+    width: 100%;
+}
+
+
+.help__form .quick__help {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.help__form .quick__help p {
+    font-weight: 800;
+    font-size: 32px;
+}
+
+.help__form .quick__help .quick__desc {
+    color: var(--app-desc);
+    font-weight: 500;
+    font-size: 12px;
+    margin-top: -20px;
+}
+
+
+.help__form .quick__help .quick__help__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-top: 24px;
+    gap: 16px;
+}
+
+.help__form .quick__help .quick__help__btn svg {
+    color: var(--app-theme);
+    fill: var(--app-theme);
+}
+
+.help__form .quick__help .quick__help__btn button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+
+/* RESPONSIVENESS */
+
+@media (min-width: 400px) {
+    .profile__tap__wrapper {
+        width: 100%;
+    }
+}
+
+@media (min-width: 640px) {
+    .profile__tap__wrapper {
+        width: 100%;
+    }
+}
+
+@media (min-width: 768px) {
+    .profile__tap__wrapper {
+        width: 100%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .profile__tap__wrapper {
+        width: 70%;
+    }
+}
+
+
+
+@media (min-width: 1280px) {
+    .profile__tap__wrapper {
+        width: 70%;
+    }
+}
+
+@media (min-width: 1536px) {
+    .profile__tap__wrapper {
+        width: 70%;
+    }
+}

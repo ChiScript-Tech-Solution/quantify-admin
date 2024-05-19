@@ -1,0 +1,197 @@
+
+
+.ant-drawer-body {
+    padding: 0px !important;
+    border: none !important;
+    border-radius: none !important;
+}
+
+.transa__merchant__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0px 28px 0px 28px !important;
+}
+
+.merchant__details__wrapper {
+    background: var(--app-theme);
+    padding: 20px;
+    width: 610px;
+    height: 100vh;
+}
+
+.merchant__details__header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+
+.merchant__details__header img {
+    width: 40px;
+    height: 100%;
+}
+
+.merchant__details__header .merchant__name {
+    font-weight: 800;
+    font-size: 24px;
+    color: var(--app-secondary);
+}
+
+.merchant__details__header .merchant__status {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--app-dashboard);
+    width: 150px;
+    padding: 4px 8px;
+    border-radius: 16px;
+    font-weight: 500;
+    font-size: 12px;
+    color: var(--app-neutral);
+    gap: 4px;
+}
+
+.merchant__details__header .merchant__status > span {
+    font-weight: 800;
+    text-transform: capitalize;
+}
+
+.merchant__details__header svg {
+    width: 22px;
+    height: 22px;
+}
+
+.merchant__details__header .merchant__address {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 4px;
+    font-weight: 700;
+    font-size: 12px;
+    color: var(--app-secondary);
+}
+
+.merchant__details__header .merchant__address svg {
+    margin-right: 8px;
+}
+
+.merchant__details__desc {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--app-dashboard);
+    border-radius: 0px 0px 8px 8px;
+    padding: 8px 12px;
+    margin-bottom: 2px;
+}
+
+.merchant__details__desc p:nth-child(1) {
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--app-neutral);
+}
+
+.merchant__details__desc p:nth-child(2) {
+    font-weight: 800;
+    font-size: 16px;
+    color: var(--app-secondary);
+}
+
+.details__tag {
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--app-secondary);
+    padding: 10px 0px;
+}
+
+
+
+/* MERCHANT DOC */
+
+.merchant__doc__wrapper { 
+    background: url("../img//merchant_doc_bg.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 482px;
+    height: 100vh;
+    padding: 20px;
+}
+
+.merchant__doc__content {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+    padding-top: 17px;
+}
+
+.merchant__doc__download {
+    background: var(--app-theme);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100px;
+    height: 119px;
+    border-radius: 8px;
+    padding: 34px 20px;
+    cursor: pointer;
+}
+
+.merchant__doc__download p {
+    font-weight: 700;
+    font-size: 8px;
+    color: var(--app-secondary);
+    padding-bottom: 12px;
+}
+
+.merchant__doc__download svg {
+    font-size: 80px;
+}
+
+.merchant__doc__view__wrapper {
+    width: 435px;
+    height: 500px;
+    margin-top: 2rem;
+}
+
+.merchant__doc__view__wrapper p {
+    font-weight: 700;
+    font-size: 16px;
+    padding-bottom: 10px;
+}
+
+.merchant__doc__view__wrapper__update button {
+    margin-top: 1rem;
+}
+
+.merchant__doc__view__wrapper img {
+    width: 100%;
+    height: 100%;
+}
+
+.merchant__doc__view__wrapper select,
+.merchant__doc__view__wrapper select:hover,
+.merchant__doc__view__wrapper select:focus,
+
+.merchant__doc__view__wrapper__update select,
+.merchant__doc__view__wrapper__update select:hover,
+.merchant__doc__view__wrapper__update select:focus {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 7px 11px;
+    font-size: 16px;
+    line-height: 1.5;
+    border-radius: 8px;
+    border: 1px solid var(--app-primary);
+}
+
+.merchant__doc__btn {
+    position: absolute;
+    bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}

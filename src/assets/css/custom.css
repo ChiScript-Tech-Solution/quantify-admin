@@ -1,0 +1,207 @@
+
+
+/* FONT */
+
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900;1000&display=swap");
+
+/* APP SETTING */
+
+:root {
+  --app-theme: #fff;
+  --app-dashboard: #f4f4f4;
+  --app-primary: #3B6352;
+  --app-secondary: rgba(41, 48, 86, 1);
+  --app-logo: rgba(16, 19, 35, 1);
+  --app-family: "Nunito", sans-serif;
+  --app-bg: rgba(230, 230, 236, 0.3);
+  --app-tertiary: #3B6352;
+  --app-btn: #3B6352;
+  --app-border: 1px solid rgba(249, 245, 255, 1);
+  --app-shadow: -4.72993px 4.72993px 40.2044px rgba(66, 48, 125, 0.3);
+  --app-input: rgba(85, 99, 105, 1);
+  --app-input-bg: rgba(248, 249, 252, 1);
+  --app-filter: rgba(46, 46, 46, 0.2);
+  --app-warning: #B42318;
+  --app-success: #01B14F;
+  --app-error: #FEE4E2;
+  --app-neutral: rgba(65, 77, 82, 1);
+  --app-record-desc: #054F31;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  font-family: var(--app-family);
+}
+
+body {
+  background-color: var(--app-dashboard);
+}
+
+
+.icon__icon {
+  font-size: 100px
+}
+
+.primary {
+  color: var(--app-primary);
+}
+
+.secondary {
+  color: var(--app-secondary);
+}
+
+.accent {
+  color: var(--app-primary);
+}
+
+.light {
+  color: var(--app-theme);
+}
+
+.app__button {
+  background-color: var(--app-primary);
+}
+
+.bg__gray {
+  background: var(--app-bg);
+  padding: 4rem 0;
+}
+
+.pd__service {
+  margin: 2.5rem 0;
+}
+
+.icon {
+  margin: 1rem 0;
+}
+
+.error {
+  color: var(--app-warning);
+  padding-top: 3px;
+}
+
+
+/* BROWSER SCROLLBAR */
+::-webkit-scrollbar {
+  width: 0.5rem;
+  scrollbar-width: thin;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px var(--app-tertiary);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--app-primary);
+  outline: 1px solid var(--app-secondary);
+}
+
+.scroller {
+  overflow-y: scroll;
+  scrollbar-color: #0a4c95 var(--app-family);
+}
+
+.modal__title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--app-secondary);
+}
+
+
+.status-before-content {
+  content: "";
+  position: relative;
+  text-transform: capitalize;
+}
+
+.status-before-content.success,
+.status-before-content.approved,
+.status-before-content.Approved,
+.status-before-content.APPROVED,
+.status-before-content.unblocked,
+.status-before-content.activated,
+.status-before-content.active,
+.status-before-content.Unblocked,
+.status-before-content.Active,
+.status-before-content.completed,
+.status-before-content.verified,
+.status-before-content.closed,
+.status-before-content.Funded,
+.status-before-content.COMPLETED,
+.status-before-content.SUCCESSFUL{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--app-success);
+  text-align: center;
+}
+
+.status-before-content.canceled,
+.status-before-content.declined,
+.status-before-content.failed,
+.status-before-content.FAILED,
+.status-before-content.disabled,
+.status-before-content.blocked,
+.status-before-content.Blocked,
+.status-before-content.flagged,
+.status-before-content.REJECTED,
+.status-before-content.Not-Funded,
+.status-before-content.open {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--app-warning);
+  text-align: center;
+  text-align: center;
+}
+
+.status-before-content.inactive,
+.status-before-content.In-active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--app-warning);
+  text-align: center;
+  text-align: center;
+}
+
+.status-before-content.pending,
+.status-before-content.Pending,
+.status-before-content.PENDING,
+.status-before-content.ongoing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--app-neutral);
+  text-align: center;
+  text-align: center;
+}
+
+
+.ant-upload-list-item-name,
+.ant-upload-list {
+  display: none !important;
+}
+
+
+.ant-table-thead tr th {
+  color: var(--app-input) !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase;
+  text-wrap: nowrap !important;
+}
+
+
+.ant-table-tbody tr td {
+  color: var( --app-input) !important;
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  text-wrap: nowrap !important;
+}

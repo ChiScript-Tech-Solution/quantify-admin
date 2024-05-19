@@ -1,0 +1,96 @@
+
+
+/* COMPLIANCE CSS */
+
+.compliance__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0 2rem 0;
+}
+
+
+.compliance__wrapper .transawave__input {
+    width: 304px;
+    border: none;
+    box-shadow: none;
+    border-radius: 16px;
+    background: var(--app-theme);
+}
+
+.transawave__input input {
+    background: inherit;
+}
+
+.compliance__wrapper .graph__abr {
+    width: 180px;
+    border: 1px solid var(--app-filter);
+    box-shadow: none;
+    border-radius: 16px;
+    background: var(--app-theme);
+    padding: 8px;
+    color: var(--app-neutral);
+    font-weight: 500;
+    font-size: 12px;
+}
+
+
+.compliance__wrapper .transawave__filter {
+    border: 0.5px solid var(--app-filter) !important;
+    box-shadow: none;
+    border-radius: 8px;
+    background: var(--app-theme);
+    width: 100px;
+    color: var(--app-input);
+}
+
+
+.transawave__date {
+    border: 0.5px solid var(--app-filter) !important;
+    box-shadow: none;
+    border-radius: 8px;
+    background: var(--app-theme);
+    color: var(--app-input);
+}
+
+.compliance__wrapper .transawave__filter > span > input {
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--app-input) !important;
+}
+
+.compliance__wrapper .transawave__sort {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    border: 0.5px solid var(--app-filter);
+    box-shadow: none;
+    border-radius: 8px;
+    background: var(--app-theme);
+    width: 76px;
+    color: var(--app-input);
+    padding: 10px 8px;
+    font-weight: 400;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.actions__keys li:nth-child(1) {
+    color: var( --app-success) !important;
+}
+
+.actions__keys li:nth-child(2) {
+    color: var(--app-warning) !important;
+}
+
+.actions__keys li:active, .actions__keys li:hover{
+    background: var(--app-dashboard) !important;
+    font-weight: 600;
+}
+
+.transawave__drawer {
+    border-radius: 0px !important;
+    background: var(--app-dashboard) !important;
+}
+

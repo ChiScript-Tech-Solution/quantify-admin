@@ -1,0 +1,263 @@
+
+
+/* AUTHENTICATION CSS */
+
+.auth__wrapper {
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.auth__wrapper aside {
+    position: relative;
+    display: block;
+    grid-column: span 5 / span 5;
+}
+
+.auth__wrapper img {
+    position: absolute;
+    inset: 0px;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+.auth__wrapper aside::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(66, 48, 125, 0.58);
+    z-index: 9999;
+  }
+
+
+.auth__main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    grid-column: span 5 / span 5;
+    background: var(--app-theme);
+
+}
+
+.auth__main__wrapper {
+  width: 100%; 
+}
+
+.auth__main__wrapper a:nth-child(1) {
+    position: absolute;
+    display: block;
+    z-index: 99999;
+}
+
+
+.auth__main__wrapper__title {
+    color: var(--app-primary);
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 42px;
+    margin-top: 2rem;
+    width: 100%;
+}
+
+.auth__main__wrapper span {
+    color: var(--app-input);
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.auth__form {
+    margin-top: 2rem;
+}
+
+.auth__form__wrapper {
+    background: var(--app-input-bg);
+    border-radius: 16px;
+    padding: 12px 20px;
+}
+
+.auth__form__wrapper:nth-child(2) {
+    margin-top: 1rem;
+}
+
+.auth__form__wrapper span {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    color: #414D52;
+}
+
+.auth__form__wrapper input {
+    width: 100%;
+    padding: 8px 0px;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+
+.auth__forgot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.auth__forgot__check {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    gap: 5px;
+}
+
+
+.auth__forgot a {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 19px;
+    color: #414D52;
+    text-decoration: none;
+}
+
+
+.auth__layout__btn {
+    background: var(--app-btn);
+    border: none;
+    border-radius: 8px;
+    text-transform: capitalize;
+    cursor: pointer;
+    color: var(--app-theme) !important;
+}
+
+
+.auth__layout__btn span {
+    color: var(--app-theme);
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 27px;
+}
+
+.auth__login {
+    width: 100%;
+    margin-top: 2rem;
+    background: var(--app-primary);
+}
+
+.auth__login span {
+    color: var(--app-theme);
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 27px;
+}
+
+.auth__login:hover {
+    background: var(--app-tertiary);
+}
+
+.auth__icon {
+    display: none;
+    position: absolute !important;
+    z-index: 99999;
+    top: 20px !important;
+    right: 20px !important;
+}
+
+.auth__img__content {
+    display: none;
+    position: absolute;
+    z-index: 99999;
+    bottom: 40px;
+    left: 50px;
+    width: 100%;
+}
+
+.auth__img__content p {
+    color: var(--app-theme);
+    font-weight: 900;
+    font-size: 30px;
+    line-height: 35px;
+    letter-spacing: -1%;
+}
+
+
+.auth__img__content span {
+    color: #F9F5FF;
+    opacity: 0.6;
+}
+
+
+
+@media (min-width: 480px) {
+
+}
+
+
+@media (min-width: 768px) {
+    
+}
+
+
+@media (min-width: 1024px) {
+    .auth__wrapper {
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+    }
+    .auth__wrapper aside {
+        position: relative;
+        height: 4rem;
+        order: 9999;
+        grid-column: span 7 / span 7;
+        height: 100%;
+    }
+
+
+    .auth__main {
+        padding: 6rem; 
+    }
+
+
+    .auth__main__wrapper a:nth-child(1) {
+        display: flex;
+    }
+
+    .auth__icon {
+        position: absolute !important;
+        display: block !important;
+        z-index: 99999;
+        top: 20px !important;
+        right: 20px !important;
+    }
+    
+    .auth__img__content {
+        display: block;
+        position: absolute;
+        z-index: 99999;
+        bottom: 40px;
+        left: 60px;
+        width: 22rem;
+    }
+    
+    .auth__img__content p {
+        color: var(--app-theme);
+        font-weight: 900;
+        font-size: 30px;
+        line-height: 35px;
+        letter-spacing: -1%;
+    }
+    
+    .auth__img__content span {
+        color: #F9F5FF;
+        opacity: 0.6;
+    }
+
+    .auth__main__wrapper__title {
+        width: 23rem;
+    }
+}

@@ -1,0 +1,264 @@
+.sidebar {
+  background: var(--app-theme);
+  padding: 1.25rem;
+  position: relative;
+  transition-duration: 300ms;
+  height: 100vh;
+}
+
+.expanded {
+  width: 14rem;
+}
+
+.collapsed {
+  width: 5rem;
+}
+
+.sidebar__toggle {
+  position: absolute;
+  right: -0.2rem;
+  top: 1.8rem;
+  width: 2rem;
+  cursor: pointer;
+  font-size: 22px;
+  color: var(--app-primary);
+}
+
+.sidebar__logo {
+  display: flex;
+  column-gap: 1rem;
+  align-items: center;
+}
+
+.sidebar__logo svg {
+  cursor: pointer;
+  transition-duration: 500ms;
+}
+
+.sidebar__logo p {
+  color: var(--app-primary);
+  transform-origin: left;
+  font-weight: 700;
+  font-size: 16px;
+  transition-duration: 200ms;
+}
+
+.sidebar__menu__item {
+  color: rgba(105, 121, 127, 1);
+}
+
+.sidebar__menu__item a {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 14px;
+  border-radius: 6px;
+  padding: 0.5rem;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.sidebar__menu__item a:hover {
+  background: rgba(224, 224, 224, 0.054);
+}
+
+.sidebar__menu__item span:nth-child(2) {
+  white-space: pre;
+  transition-duration: 500ms;
+}
+
+.sidebar__menu__item span:nth-child(3) {
+  position: absolute;
+  left: 15rem;
+  background: var(--app-btn);
+  white-space: pre;
+  color: var(--app-theme);
+  border-radius: 6px;
+  padding: 0px;
+  width: 0px;
+  overflow: hidden;
+}
+
+.main__layout {
+  background: var(--app-dashboard);
+  height: 100vh;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-right: 1.75rem;
+}
+
+/* NAVBAR CSS */
+.navbar__header {
+  position: sticky;
+  top: 0;
+  background-color: #fff; /* Adjust background color as needed */
+  padding: 16px; /* Adjust padding as needed */
+  z-index: 1;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.navbar__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar__path {
+  font-weight: 800;
+  font-size: 18px;
+  color: var(--app-primary);
+  text-transform: capitalize;
+}
+
+:where(.css-dev-only-do-not-override-1fviqcj).ant-switch.ant-switch-checked
+  .ant-switch-inner {
+  background: var(--app-btn);
+}
+
+.navbar__right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.navbar__right img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--app-primary);
+}
+
+.navbar__right .ant-btn-default {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  gap: 10px;
+  padding: 0px;
+  outline: none;
+  box-shadow: none;
+}
+
+.navbar__right .ant-btn-default span {
+  margin-right: 12px;
+  color: rgba(105, 121, 127, 1);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 19px;
+}
+
+.navbar__right .ant-btn-default:focus {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+
+.navbar__right svg {
+  cursor: pointer;
+}
+
+/* NEW CSS CODE FOR SIDEBAR AND MAIN LAYOUT */
+
+.sidebar__new {
+  display: flex;
+  position: relative;
+}
+
+.sidebar__new__side {
+  background: var(--app-theme);
+  height: 100vh;
+  padding: 1.25rem;
+  position: fixed;
+  transition-duration: 300ms;
+  z-index: 9;
+}
+
+.expand {
+  width: 14rem;
+}
+
+.collapse {
+  width: 5rem;
+}
+
+.sidebar__new__toggle {
+  position: absolute;
+  right: -0.2rem;
+  top: 1.8rem;
+  width: 2rem;
+  cursor: pointer;
+  font-size: 22px;
+  color: var(--app-primary);
+  display: none;
+}
+
+.sidebar__new__menu__item {
+  color: rgba(105, 121, 127, 1);
+}
+
+.sidebar__new__menu__item a {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 14px;
+  border-radius: 6px;
+  padding: 0.5rem;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.sidebar__new__menu__item a:hover {
+  background: rgba(224, 224, 224, 0.054);
+}
+
+.sidebar__new__menu__item span:nth-child(2) {
+  white-space: pre;
+  transition-duration: 500ms;
+}
+
+.sidebar__new__menu__item span:nth-child(3) {
+  position: absolute;
+  left: 15rem;
+  background: var(--app-btn);
+  white-space: pre;
+  color: var(--app-theme);
+  border-radius: 6px;
+  padding: 0px;
+  width: 0px;
+  overflow: hidden;
+}
+
+.sidebar__new__content {
+  background: var(--app-dashboard);
+  height: 100vh;
+  padding-bottom: 1rem;
+  padding-right: 1.75rem;
+}
+
+.navbar__new__header {
+  position: sticky;
+  top: 0;
+  background-color: #fff; 
+  padding: 16px; 
+  z-index: 2;
+  margin-bottom: 1rem;
+}
+
+
+
+/* SIDEBAR TOGGLE RESPONSIVENESS */
+
+@media (min-width: 480px) {
+ .collapsed {
+    width: 5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .collapsed {
+    width: 5rem;
+  }
+}

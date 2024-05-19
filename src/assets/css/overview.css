@@ -1,0 +1,225 @@
+.overview__export {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.record__grid__wrapper {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.record__card__wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background: var(--app-theme);
+  border-radius: 16px;
+  width: 100%;
+  height: 120px;
+  border: 1px solid var(--app-filter);
+  padding: 32px;
+  flex-direction: column;
+}
+
+.record__card__wrapper .total {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--app-secondary);
+  gap: 4px;
+}
+
+.record__card__wrapper .balance {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 800;
+  font-size: 16px;
+  color: var(--app-secondary);
+  padding-top: 12px;
+}
+
+.record__card__wrapper .balance span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--app-success);
+  gap: 4px;
+  padding-left: 8px;
+}
+
+.record__card__wrapper .desc {
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--app-record-desc);
+}
+
+.graph__wrapper {
+  background: var(--app-theme);
+  border-radius: 16px;
+  margin-top: 16px;
+  height: 476px;
+}
+
+.graph__wrapper .title {
+  font-weight: 800;
+  font-size: 18px;
+  color: var(--app-secondary);
+}
+
+/* ADMIN OVERVIEW */
+.overview__overview__graph__admin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    width: 100%;
+}
+
+
+.admin__overview {
+    background: var(--app-theme);
+    width: 100%;
+    height: 476px;
+    padding: 24px 17px;
+    border-radius: 16px;
+}
+
+.admin__overview__active {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 0px 24px 0px;
+}
+
+.admin__overview__info {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 12px;
+}
+
+.admin__overview__info img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.admin__overview__info p {
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--app-secondary);
+}
+
+.admin__overview__info span {
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--app-secondary);
+}
+
+.admin__overview__status {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+.admin__overview__status p {
+  font-weight: 500;
+  font-size: 12px;
+  color: var(--app-neutral);
+  padding-top: 10px;
+}
+
+.admin__overview__btn {
+  background: var(--app-primary);
+  border: none !important;
+  color: var(--app-theme);
+  width: 100%;
+  margin-top: 9px;
+}
+
+.view__click {
+  font-weight: 500;
+  font-size: 14px;
+  text-decoration: none;
+  color: var(--app-primary);
+}
+
+.view__click:hover, .view__click:focus {
+  color: inherit;
+}
+
+/* RESPONSIVENESS */
+
+@media (min-width: 480px) {
+  .record__grid__wrapper {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  .graph__wrapper {
+    width: 100%;
+    border-radius: 16px;
+    margin: 16px 0px;
+    height: 476px;
+  }
+
+  .admin__overview {
+    background: var(--app-theme);
+    width: 100%;
+    height: 476px;
+    padding: 24px 17px;
+    border-radius: 16px;
+}
+}
+
+@media (min-width: 768px) {
+  .record__grid__wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .graph__wrapper {
+    width: 100%;
+    border-radius: 16px;
+    margin-top: 16px;
+    height: 476px;
+  }
+
+  .admin__overview {
+    background: var(--app-theme);
+    width: 429px;
+    height: 476px;
+    padding: 24px 17px;
+    border-radius: 16px;
+}
+}
+
+@media (min-width: 1024px) {
+  .record__grid__wrapper {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .graph__wrapper {
+    border-radius: 16px;
+    margin-top: 16px;
+    padding: 20px;
+    height: 476px;
+  }
+
+  .admin__overview {
+    background: var(--app-theme);
+    width: 429px;
+    height: 476px;
+    padding: 24px 17px;
+    border-radius: 16px;
+}
+}
