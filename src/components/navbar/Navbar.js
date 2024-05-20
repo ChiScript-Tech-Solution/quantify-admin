@@ -11,7 +11,6 @@ const Navbar = () => {
   const location = useLocation();
   const { user } = useSelector(state => state.auth);
   const dispatch = useDispatch();
-  console.log("user data:", user);
 
   const items = [
     {

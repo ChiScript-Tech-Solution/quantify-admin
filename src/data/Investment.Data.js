@@ -3,8 +3,6 @@
 import { formatAmount, formatDateAndTime } from "../utils/Utils";
 const apiUrl = process.env.REACT_APP_RECEIPT_URL
 
-console.log("API URL: ", apiUrl)
-
 export const getInvestmentColumns = (isSearchQuery) => {
     
   const invest_col = [
