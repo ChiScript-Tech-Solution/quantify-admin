@@ -152,7 +152,7 @@ const handleReject= async (customerId) => {
           rowKey="id"
           rowSelection="checked"
           pagination={{
-            total: loans?.data?.total * pageSize,
+            total: loans?.data?.total,
             pageSize: pageSize,
             current: currentPage,
             showSizeChanger: true,

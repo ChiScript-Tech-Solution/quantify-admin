@@ -70,13 +70,14 @@ const Transactions = () => {
           rowSelection="checked"
           pagination={{
             showSizeChanger: true,
-            total: transactions?.data?.total * pageSize,
+            total: transactions?.data?.total,
             pageSize: pageSize,
             current: currentPage,
             onChange: handlePageChange,
             showTotal: (total, range) =>
               `${range[0]}-${range[1]} of ${total} items`,
           }}
+          scroll={{x: true}}
         />
       </Styled.Wrapper>
 

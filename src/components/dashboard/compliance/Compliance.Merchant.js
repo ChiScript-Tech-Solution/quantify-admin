@@ -26,9 +26,6 @@ const ComplianceMerchant = () => {
     setIsViewDetails(!isViewDetails);
   };
 
-  console.log("SelectedCustomerId:", selectedCustomerId)
-  console.log("SelectedCustomerPhone:", selectedCustomerPhone)
-
   useEffect(() => {
       dispatch(fetchAllCustomers({
         offSet: currentPage,
@@ -113,7 +110,7 @@ const ComplianceMerchant = () => {
           rowSelection="checked"
           loading={loading}
           pagination={{
-            total: customers?.data?.total * pageSize,
+            total: customers?.data?.total,
             pageSize: pageSize,
             current: currentPage,
             showSizeChanger: true,
@@ -124,6 +121,7 @@ const ComplianceMerchant = () => {
             ],
           }}
           className="centered-pagination"
+          scroll={{x: true}}
         />
       </Styled.Wrapper>
 

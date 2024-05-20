@@ -8,7 +8,7 @@ export const loginUser = createAsyncThunk('/pitcher/auth/loginUser', async (payl
       setAuthToken(data?.data.token);
       return data;
   } catch (error) {
-      return rejectWithValue(error)
+      return rejectWithValue(error)   
   }
 })
 

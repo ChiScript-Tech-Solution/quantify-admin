@@ -205,3 +205,10 @@ body {
   font-weight: 400 !important;
   text-wrap: nowrap !important;
 }
+
+.auth__select {
+  padding: 10px;
+  border: none;
+  background: transparent;
+  width: 4.2rem;
+}
