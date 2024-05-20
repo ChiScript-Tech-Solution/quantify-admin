@@ -14,8 +14,10 @@ export const fetchUserLoans = createAsyncThunk(
   'pitcher/user/loans',
   async ({page, limit, status }, { rejectWithValue }) => {
     try {
-      const search = status === undefined ? '' : `&status=${status}`;
-      const response = await userRequest.get(`/admin/fetch-withdrawals?offSet=${page}&limit=${limit}${search}`);
+      const search = status === '' ? '' : `&status=${status}`;
+      const next = page === "" ? '' : `?offset=${page}`;
+      const pageSize = limit === '' ? '' : `&limit=${limit}`;
+      const response = await userRequest.get(`/admin/fetch-withdrawals${next}${pageSize}${search}`);
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response.data);

@@ -14,7 +14,7 @@ export const removeUserDelux = createAsyncThunk(
   'pitcher/delete/delux',
   async (payload, { rejectWithValue }) => {
     try {
-      const response = await userRequest.post(`/console/delete-delux`, payload);
+      const response = await userRequest.post(`/admin/reject-withdrawal`, payload);
       return response.data;
     } catch (error) {
       return rejectWithValue(error);

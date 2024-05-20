@@ -8,8 +8,10 @@ import { schema } from "../../schema/Schema";
 import { Styled } from "../../constants/Styled";
 import { userForgotPassword } from "../../state/slice/forgotPassword.Auth.Slice";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate()
   const [isLoading, setIsLoading] = useState(false)
   const dispatch = useDispatch();
 
@@ -25,7 +27,9 @@ const Login = () => {
         const response = await dispatch(userForgotPassword(values)).unwrap();
         setIsLoading(false);
         toast.success(response?.message);
-        formik.resetForm();
+        if (response.success === true) {
+          navigate(`/reset/password/`, { state: { email: values.email } });
+        }
       } catch (err) {
         message.error(err.message);
       } finally {
@@ -45,7 +49,7 @@ const Login = () => {
           Empowering your cause and fostering growth has never been more straightforward.
           </Styled.Text>
           <Styled.Span>
-            We're here to serve you @smeandmore.com
+            We're here to serve you @quantify.com
           </Styled.Span>
         </Styled.Section>
       </Styled.Aside>
@@ -57,7 +61,7 @@ const Login = () => {
           </Styled.Linked>
 
           <Styled.Text sx="auth__main__wrapper__title">
-            Welcome back to SME AND MORE!
+            Welcome back!
           </Styled.Text>
 
           <Styled.Span>Enter your registered email to reset password</Styled.Span>

@@ -14,7 +14,7 @@ export const userForgotPassword = createAsyncThunk(
   'pitcher/admin/forgot/password',
   async (payload, { rejectWithValue }) => {
     try {
-      const response = await publicRequest.post('/console/request-reset-password', payload);
+      const response = await publicRequest.post('/request-reset-password', payload);
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response.data);

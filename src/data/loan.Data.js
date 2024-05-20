@@ -10,21 +10,17 @@ export const getLoansColumns = (isSearchQuery) => {
       onFilter: (value, record) => {
         return (
           String(record.id).toLowerCase().includes(value.toLowerCase()) ||
-          String(record.amount).toLowerCase().includes(value.toLowerCase())
+          String(record.amount).toLowerCase().includes(value.toLowerCase()) ||
+          String(record.user.phoneNumber).toLowerCase().includes(value.toLowerCase())
         );
       },
     },
 
     {
-      title: "Paid",
-      dataIndex: "paid",
-      render: (paid) => (
-        <div className={`status-before-content ${paid ? "Paid" : "Pending"}`}>
-          {paid ? "Paid" : "Pending"}
-        </div>
-      ),
-      sorter: (a, b) => a.paid - b.paid,
-      align: "center",
+      title: "Phone Number",
+      dataIndex: "user",
+      render: (user) => `${user.countryCode} ${user.phoneNumber}`,
+      sorter: (a, b) => a.user.phoneNumber- b.user.phoneNumber,
     },
 
     {
@@ -35,10 +31,21 @@ export const getLoansColumns = (isSearchQuery) => {
     },
 
     {
-      title: "Wallet",
-      dataIndex: "wallet",
-      render: (wallet) => `${wallet ?? "N/A"}`,
-      sorter: (a, b) => a.wallet - b.wallet,
+      title: "Reference",
+      dataIndex: "reference",
+      sorter: (a, b) => a.reference - b.reference,
+    },
+
+    {
+      title: "Status",
+      dataIndex: "status",
+      render: (status) => (
+        <div className={`status-before-content ${status}`}>
+          {status}
+        </div>
+      ),
+      sorter: (a, b) => a.status - b.status,
+      align: "center",
     },
 
     {

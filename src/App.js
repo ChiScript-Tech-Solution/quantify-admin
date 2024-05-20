@@ -52,7 +52,7 @@ const App = () => {
           <Route path="/" exact index element={<LoginPage />} />
           <Route path="/admin/forgot/password" exact index element={<ForgotPasswordPage />} />
           <Route path="/set/password/:token" element={<AcceptInvite />} />
-          <Route path="/reset/password/:token" element={<ChangePassword />} />
+          <Route path="/reset/password/" element={<ChangePassword />} />
           <Route element={<ProtectedRoute user={user} redirect="/" />}>
             <Route path="/dashboard/overview" exact element={<Dashboard />} />
             <Route path="/dashboard/customers" exact element={<Compliance />}/>

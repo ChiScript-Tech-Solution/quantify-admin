@@ -79,8 +79,8 @@ export const otpSchema = yup.object({
 });
 
 export const changePasswordSchema = yup.object({
-  old_password: yup.string().required("Old Password is required"),
-  new_password: yup.string().required("Enter New Password"),
+  oldPassword: yup.string().required("Old Password is required"),
+  newPassword: yup.string().required("Enter New Password"),
 });
 
 export const loanRequestSchema = yup.object({
@@ -136,6 +136,8 @@ export const inviteAdminSchema = yup.object({
 });
 
 export const acceptInviteSchema = yup.object({
+  otp: yup.string().required("Verification Code is required"),
+  email: yup.string().required("Email is required"),
   password:  yup
     .string()
     .required("Password is required")

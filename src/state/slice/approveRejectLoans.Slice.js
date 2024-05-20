@@ -10,11 +10,11 @@ const initialState = {
   error: null,
 };
 
-export const approveRejectUserLoan = createAsyncThunk(
+export const approveUserWithdrawal = createAsyncThunk(
   'pitcher/approve/reject/customers/kyc',
   async (payload, { rejectWithValue }) => {
     try {
-      const response = await userRequest.patch('/console/approve-loan', payload);
+      const response = await userRequest.post('/admin/approve-withdrawal', payload);
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response.data);
@@ -30,15 +30,15 @@ const approveRejectLoanSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(approveRejectUserLoan.pending, (state) => {
+      .addCase(approveUserWithdrawal.pending, (state) => {
         state.loading = true;
         state.error = null;
       })
-      .addCase(approveRejectUserLoan.fulfilled, (state, action) => {
+      .addCase(approveUserWithdrawal.fulfilled, (state, action) => {
         state.loading = false;
         state.approveRejectLoan = action.payload;
       })
-      .addCase(approveRejectUserLoan.rejected, (state, action) => {
+      .addCase(approveUserWithdrawal.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
       })   

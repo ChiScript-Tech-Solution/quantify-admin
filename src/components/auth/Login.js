@@ -33,7 +33,7 @@ const Login = () => {
         message.success(response?.message)
         formik.resetForm();
       } catch (err) {
-        message.error(err.message);
+        message.error(err.message || err.response.message);
       } finally {
         setIsLoading(false);
       }

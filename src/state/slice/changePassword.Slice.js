@@ -14,7 +14,7 @@ export const changePasswordRequest = createAsyncThunk(
   'pitcher/change/password',
   async (payload, { rejectWithValue }) => {
     try {
-      const response = await userRequest.post('/console/change-password', payload);
+      const response = await userRequest.patch('/change-password', payload);
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response.data);

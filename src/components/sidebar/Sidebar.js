@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Navbar from "../navbar/Navbar";
 import { Styled } from "../../constants/Styled";
 import { Icons } from "../../constants/Icons";
+import { Images } from "../../constants/Images";
 
 const Sidebar = (props) => {
   const [open, setOpen] = useState(true);
@@ -31,8 +32,8 @@ const Sidebar = (props) => {
         />
         <Styled.Section sx={open ? "sidebar__logo" : "block"}>
           {/* <Icons.Logo3 size="34" /> */}
-          <span className="rounded-[50%] border-2 border-black p-4">IM</span>
-          <Styled.Text sx={!open && "scale-0"}>IM London</Styled.Text>
+          <span className="rounded-[50%] border-2 border-black"><img src={Images.Logo} alt="" width={40} height={40}/> </span>
+          <Styled.Text sx={!open && "scale-0"}>Quantify</Styled.Text>
         </Styled.Section>
 
         <Styled.List sx={`sidebar__new__menu__item ${open ? "pt-6" : "pt-3"}`}>

@@ -6,6 +6,9 @@ import {  getLoansColumns } from "../../../data/loan.Data";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchUserLoans } from "../../../state/slice/Loans.Slice";
 import { Icons } from "../../../constants/Icons";
+import { toast } from "react-toastify";
+import { approveUserWithdrawal } from "../../../state/slice/approveRejectLoans.Slice"
+import { removeUserDelux } from "../../../state/slice/removeDelux.Slice";
 
 
 const Loan = () => {
@@ -14,6 +17,8 @@ const Loan = () => {
   const [ currentPage, setCurrentPage ] = useState(1);
   const [ pageSize, setPageSize ] = useState(10);
   const [ isSearchQuery, setIsSearchQuery ] = useState("");
+  const [ isLoading, setIsLoading ] = useState(false);
+  const [isRejecting, setIsRejecting ] = useState(false);
  
 
   useEffect(() => {
@@ -27,7 +32,7 @@ const Loan = () => {
     );
   }, [dispatch, isSearchQuery, currentPage, pageSize]);
 
-  const allLoans = loans?.data?.data;
+  const allLoans = loans?.data?.fundingRequest;
 
   // pagination
   const handlePageChange = (page, newPageSize) => {
@@ -35,16 +40,67 @@ const Loan = () => {
     setPageSize(newPageSize);
   };
 
+  const handleApproved = async (referenceId) => {
+    setIsLoading(true);
+    const payload = {
+      reference: referenceId,
+      status: 'APPROVED'
+    }
+    try {
+      const res = await dispatch(approveUserWithdrawal(payload)).unwrap();
+      setIsLoading(false);
+      toast.success(res.message)
+      dispatch(
+        fetchUserLoans({
+          page: currentPage,
+          limit: pageSize,
+          status: isSearchQuery,
+  
+        })
+      );
+    } catch (err) {
+      setIsLoading(false);
+      toast.error(err?.data?.message ||  err.message)
+    } finally {
+      setIsLoading(false);
+    }
+}
+
+const handleReject= async (customerId) => {
+  setIsRejecting(true);
+  const payload = {
+    reference: customerId,
+    status: 'REJECTED',
+  }
+  try {
+    const res = await dispatch(removeUserDelux(payload)).unwrap();
+    setIsRejecting(false);
+    toast.success(res.message)
+    dispatch(
+      fetchUserLoans({
+        page: currentPage,
+        limit: pageSize,
+        status: isSearchQuery,
+
+      })
+    );
+  } catch (err) {
+    setIsRejecting(false);
+    toast.error(err?.data?.message ||  err.message)
+  } finally {
+    setIsRejecting(false);
+  }
+}
 
 
   const renderActionMenu = (customerId) => {
     return (
       <Menu className="actions__keys">
-        <Menu.Item key="approved" >
-          Approved
+        <Menu.Item key="approved" onClick={() => handleApproved(customerId)}>
+            {isLoading ? "Processing..." : "Approved"}
         </Menu.Item>
-        <Menu.Item key="approved" >
-          Reject
+        <Menu.Item key="approved" onClick={() => handleReject(customerId)}>
+          {isRejecting ? "Processing..." : "Reject"}
         </Menu.Item>
       </Menu>
     );
@@ -56,7 +112,7 @@ const Loan = () => {
     key: "id",
     render: (_, record, index) => (
       <Dropdown
-        overlay={renderActionMenu(record?.id, index)}
+        overlay={renderActionMenu(record?.reference, index)}
         placement="bottomRight"
         arrow
       >

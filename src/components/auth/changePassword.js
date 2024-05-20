@@ -4,21 +4,22 @@ import { Button, Input } from "antd";
 import { useDispatch } from "react-redux";
 import { useFormik } from "formik";
 import { toast } from "react-toastify";
-import { useNavigate, useParams } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { userNewPassword} from "../../state/slice/setNewPassword.Slice";
 import { schema } from "../../schema/Schema";
 import { Styled } from "../../constants/Styled";
 
 const ChangePassword = () => {
   const navigate = useNavigate();
-  const { token } = useParams();
   const dispatch = useDispatch();
+  const location = useLocation();
   const [ isLoading, setIsLoading ] = useState(false);
 
 
   const formik = useFormik({
     initialValues: {
-      token: token,
+      otp: '',
+      email: location.state?.email,
       password: "",
       confirm_password: "",
     },
@@ -57,8 +58,46 @@ const ChangePassword = () => {
             character, symbol and be at least 8 characters long.
           </Styled.Text>
           <Styled.Form sx="w-full" onSubmit={formik.handleSubmit}>
-            <Styled.Section sx="password__auth pt-10">
-              <Styled.Span>New Password</Styled.Span>
+          <Styled.Section sx="password__auth pt-10">
+              <Styled.Span>Verification Code</Styled.Span>
+              <Input.Password
+              size="large"
+                type="password"
+                placeholder="****"
+                name="otp"
+                value={formik.values.otp}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                className="pictcher__input"
+              />
+              <Styled.Section sx="error">
+                {formik.touched.otp &&
+                  formik.errors.otp &&
+                  formik.errors.otp}
+              </Styled.Section>
+            </Styled.Section>
+
+            <Styled.Section sx="password__auth pt-5">
+              <Styled.Span>Email Address</Styled.Span>
+              <Input.Password
+              size="large"
+                type="email"
+                placeholder="****"
+                name="email"
+                value={formik.values.email}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                className="pictcher__input"
+              />
+              <Styled.Section sx="error">
+                {formik.touched.email &&
+                  formik.errors.email &&
+                  formik.errors.email}
+              </Styled.Section>
+            </Styled.Section>
+
+            <Styled.Section sx="password__auth pt-5">
+              <Styled.Span>Password</Styled.Span>
               <Input.Password
               size="large"
                 type="password"

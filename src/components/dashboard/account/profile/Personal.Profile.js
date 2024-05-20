@@ -9,8 +9,6 @@ const PersonalProfile = () => {
     const { user } = useSelector((state) => state.auth);
     const [ isEditProfile, setIsEditProfile ] = useState(false);
 
-    console.log("user data:", user)
-
 
     const handleEditProfile = () => {
       setIsEditProfile(!isEditProfile);
@@ -31,14 +29,14 @@ const PersonalProfile = () => {
           {/* first and last name */}
           <Styled.Wrapper sx="profile__wrapper__content">
             <Styled.Section>
-              <Styled.Span>First Name</Styled.Span>
-              <Styled.Text>{user?.full_name ?? "N/A"}</Styled.Text>
+              <Styled.Span>Email</Styled.Span>
+              <Styled.Text>{user?.profile?.email ?? "N/A"}</Styled.Text>
             </Styled.Section>
 
             <Styled.Section>
-              <Styled.Span>Account Number</Styled.Span>
+              <Styled.Span>Gender</Styled.Span>
               <Styled.Text sx="">
-                {user?.bank_information?.account_number || "N/A"}
+                {user?.profile?.gender || "N/A"}
               </Styled.Text>
             </Styled.Section>
           </Styled.Wrapper>
@@ -48,14 +46,14 @@ const PersonalProfile = () => {
             <Styled.Section>
               <Styled.Span>Referral Code</Styled.Span>
               <Styled.Text>
-                {user?.refferal_code || "N/A"}
+                {user?.profile?.invitationCode || "N/A"}
               </Styled.Text>
             </Styled.Section>
 
             <Styled.Wrapper>
               <Styled.Span>Phone Number</Styled.Span>
               <Styled.Text>
-                {user?.phone_number || "N/A"}
+                {user?.profile?.nickName || "N/A"}
               </Styled.Text>
             </Styled.Wrapper>
           </Styled.Wrapper>
@@ -63,16 +61,16 @@ const PersonalProfile = () => {
           {/* role and address */}
           <Styled.Wrapper sx="profile__wrapper__content">
             <Styled.Section>
-              <Styled.Span>Role</Styled.Span>
+              <Styled.Span>Level</Styled.Span>
               <Styled.Text>
-                {user?.is_admin === true ? "Administrator" : "Staff"}
+                {user?.level?.levelName ?? "N/A"}
               </Styled.Text>
             </Styled.Section>
 
             <Styled.Section>
-              <Styled.Span >Bank Name</Styled.Span>
+              <Styled.Span >Earnings</Styled.Span>
               <Styled.Text >
-                {user?.bank_information?.bank_name ?? "N/A"}
+                {user?.wallet?.todayEarnings ?? "N/A"}
               </Styled.Text>
             </Styled.Section>
           </Styled.Wrapper>

@@ -11,6 +11,7 @@ const Navbar = () => {
   const location = useLocation();
   const { user } = useSelector(state => state.auth);
   const dispatch = useDispatch();
+  console.log("user data:", user);
 
   const items = [
     {
@@ -46,7 +47,7 @@ const Navbar = () => {
           arrow
         >
           <Button>
-            {user?.full_name} <Icons.ChevronDropdown />
+            {user?.profile?.nickName} <Icons.ChevronDropdown />
           </Button>
         </Dropdown>
       </Styled.Section>

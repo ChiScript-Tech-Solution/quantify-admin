@@ -10,7 +10,7 @@ const initialState = {
 export const userNewPassword = createAsyncThunk('merchant/user/set/new/password',
   async (payload, { rejectWithValue }) => {
     try {
-      const response = await publicRequest.patch(`/console/reset-password`, payload);
+      const response = await publicRequest.post(`/reset-password`, payload);
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response.data);

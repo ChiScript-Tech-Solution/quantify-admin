@@ -15,8 +15,8 @@ const ChangePassword = () => {
 
   const formik = useFormik({
     initialValues: {
-      old_password: "",
-      new_password: "",
+      oldPassword: "",
+      newPassword: "",
     },
 
     validationSchema: schema.changePasswordSchema,
@@ -44,15 +44,15 @@ const ChangePassword = () => {
         <Styled.Input
           type="password"
           placeholder="****"
-          name="old_password"
-          value={formik.values.old_password}
+          name="oldPassword"
+          value={formik.values.oldPassword}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
         />
         <Styled.Section sx="error">
-          {formik.touched.old_password &&
-            formik.errors.old_password &&
-            formik.errors.old_password}
+          {formik.touched.oldPassword &&
+            formik.errors.oldPassword &&
+            formik.errors.oldPassword}
         </Styled.Section>
       </Styled.Section>
 
@@ -61,16 +61,16 @@ const ChangePassword = () => {
         <Styled.Input
           type="password"
           placeholder="***"
-          name="new_password"
-          value={formik.values.new_password}
+          name="newPassword"
+          value={formik.values.newPassword}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
         />
 
         <Styled.Section sx="error">
-          {formik.touched.new_password &&
-            formik.errors.new_password &&
-            formik.errors.new_password}
+          {formik.touched.newPassword &&
+            formik.errors.newPassword &&
+            formik.errors.newPassword}
         </Styled.Section>
       </Styled.Section>
 
