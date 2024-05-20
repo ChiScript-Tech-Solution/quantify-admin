@@ -1,7 +1,7 @@
 // InvestmentColumns.js
 
 import { formatAmount, formatDateAndTime } from "../utils/Utils";
-
+const apiUrl = window.location.hostname
 
 export const getInvestmentColumns = (isSearchQuery) => {
     
@@ -15,7 +15,7 @@ export const getInvestmentColumns = (isSearchQuery) => {
     {
       title: "Receipt",
       dataIndex: "receipt",
-      render: (receipt) => <img src={receipt} alt="" width={40} height={40} style={{ borderRadius: "50%"}} />,
+      render: (receipt) => <img src={`${apiUrl}/` + receipt} alt="" width={40} height={40} style={{ borderRadius: "50%"}} />,
       sorter: (a, b) => a.receipt - b.receipt,
     },
 
