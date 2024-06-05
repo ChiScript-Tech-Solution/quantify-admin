@@ -84,10 +84,10 @@ const AddAddress = () => {
 
   const handleDeleteAddress = async (addressId) => {
     setDeleting(true);
-    const payload = {
-      uuid: addressId
-    }
     try {
+      const payload = {
+        uuid: addressId.toString()
+      }
       const res = await dispatch(deleteFundAddress(payload)).unwrap();
       setDeleting(false);
       toast.success(res.message);
@@ -175,7 +175,7 @@ const AddAddress = () => {
         <>
           {addedAddress?.map((item) => (
             <div className='flex justify-between items-center border-t-2 border-t-black' key={item?.uuid}>
-              <span className='text-black font-semibold'>{item?.address.slice(0, 20)}</span>
+              <span className='text-black font-semibold'>{item?.address.slice(0, 12)}</span>
               <section className='flex justify-center items-center space-x-2'>
                 <span>{item?.name}</span>
                 <Icons.EditIcon color='#3B6352' size={20} className='cursor-pointer' onClick={() => handleEdit(item?.uuid)}/>

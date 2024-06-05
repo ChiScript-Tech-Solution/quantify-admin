@@ -35,10 +35,11 @@ const Login = () => {
         message.success(response?.message)
         formik.resetForm();
       } catch (error) {
-        if (error.response.status === 400) {
-          message.error(error.response.data.message[0])
+        console.log("error", error);
+        if (error?.response?.status === 400) {
+          message.error(error?.response?.data?.message[0])
         } else {
-          message.error(error.response.message);
+          message.error(error?.message || error?.response?.message);
         }
 
       } finally {
@@ -101,8 +102,8 @@ const Login = () => {
                   onChange={handleCountryChange}
                 >
                   <option value="">+---</option>
-                  {countries.map((item) => (
-                    <option value={item?.dial_code} key={item.dial_code}> 
+                  {countries.map((item, index) => (
+                    <option value={item?.dial_code} key={index}> 
                     {selectedCountry ? null : item.name}
                     {item?.dial_code}</option>
                   ))}

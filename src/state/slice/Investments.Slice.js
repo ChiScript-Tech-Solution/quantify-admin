@@ -12,10 +12,12 @@ const initialState = {
 
 export const fetchAllInvestments = createAsyncThunk(
   'pitcher/all/investments',
-  async ({page, limit, status,}, { rejectWithValue }) => {
+  async ({offSet, limit, status,}, { rejectWithValue }) => {
     try {
       const search = status === undefined ? '' : `&status=${status}`;
-      const response = await userRequest.get(`/admin/fetch-funding?offset=${page}&limit=${limit}${search}`,);
+      const pages = offSet === null ? '' : `?offSet=${offSet}`;
+      const limits = limit === null ? '' : `&limit=${limit}`;
+      const response = await userRequest.get(`/admin/fetch-funding${pages}${limits}${search}`,);
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response.data);

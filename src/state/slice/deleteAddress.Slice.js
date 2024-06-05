@@ -11,10 +11,12 @@ deleteAddress: [],
 };
 
 export const deleteFundAddress = createAsyncThunk(
-  'pitcher/admin/add/wallet/address',
+  'pitcher/admin/delete/wallet-funding/address',
   async (payload, { rejectWithValue }) => {
     try {
-      const response = await userRequest.delete(`/admin/funding-wallet`, payload);
+      const response = await userRequest.delete(`/admin/funding-wallet`, {
+        data: payload,
+      });
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response);
