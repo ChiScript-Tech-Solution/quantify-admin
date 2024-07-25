@@ -15,7 +15,7 @@ import { approveRejectKYC } from "../../../state/slice/approvedRejectKYC.Slice";
 const Investments = () => {
   const dispatch = useDispatch();
   const { investments, loading } = useSelector((state) => state.investments);
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(0);
   const [pageSize, setPageSize] = useState(10);
   const [isSearchQuery, setIsSearchQuery] = useState("");
   const [isOpen, setIsOpen] = useState(false);
